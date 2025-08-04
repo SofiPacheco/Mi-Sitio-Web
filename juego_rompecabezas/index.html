@@ -15,7 +15,8 @@
 </head>
 <body>
     <div id="app" class="main-container">
-        <div class="intro-screen" v-if="!gameStarted">
+        <div class="intro-screen" v-if="!gameStarted"> 
+            <!--  Pantalla de introducción aparece si el juego aun no se ha iniciado -->
             <header>
                 <nav class="navbar navbar-expand-lg mi-nav">
                     <div class="container-fluid">
@@ -93,7 +94,7 @@
                         </p>
                     </div>
                     <button class="play-button btn btn-primary btn-lg mt-3" @click="startGame">
-                        <i class="bi bi-play-fill"></i>
+                        <i class="bi bi-play-fill"></i> <!-- ícono -->
                         Comenzar Juego
                     </button>
                 </div>
@@ -106,13 +107,13 @@
             </footer>
         </div>
 
-        <div class="game-screen" v-else>
-            <div class="game-container" @mouseup="dragEnd">
-                <div class="pieces-side left">
-                    <div class="puzzle-piece" v-for="piece in unplacedPiecesLeft" :key="piece.id" :style="getPoolPieceStyle(piece)" @mousedown="dragStart($event, piece)"></div>
+        <div class="game-screen" v-else> <!--Pantalla del juego aparece si el juego ya ha comenzado-->
+            <div class="game-container" @mouseup="dragEnd"> <!-- Contenedor del juego -->
+                <div class="pieces-side left"> <!-- Lado izquierdo para piezas no colocadas -->
+                    <div class="puzzle-piece" v-for="piece in unplacedPiecesLeft" :key="piece.id" :style="getPoolPieceStyle(piece)" @mousedown="dragStart($event, piece)"></div> <!-- Piezas no colocadas -->
                 </div>
-                <div class="game-frame">
-                    <div v-if="showFullImage" class="game-full-image-overlay" @click="hideFullImageAndStartPuzzle">
+                <div class="game-frame"> <!-- Marco del juego -->
+                    <div v-if="showFullImage" class="game-full-image-overlay" @click="hideFullImageAndStartPuzzle"> <!-- Capa de imagen completa -->
                         <img :src="currentPuzzle.imageSrc" alt="Imagen Completa del Rompecabezas" class="full-puzzle-image">
                         <div class="click-to-start">Haz clic para comenzar</div>
                     </div>
