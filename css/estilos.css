@@ -14,6 +14,8 @@ h1 {
   text-align: center;
   font-size: 70px;
   padding: 20px;
+   width: 80%;
+  margin: 0 auto; /*queda centrado*/
 }
 
 h2,h3{
@@ -22,11 +24,6 @@ h2,h3{
   font-style: normal;
   text-align: center;
   padding: 20px;
-}
-
-h1{
-  width: 80%;
-  margin: 0 auto; /*queda centrado*/
 }
 
 p{
@@ -564,4 +561,66 @@ address a:hover{
   footer{
     margin-top: 50px
   }
+}
+
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: 'Quicksand', sans-serif;
+    background-color: #000;
+    color: #fff;
+}
+main {
+    flex: 1;
+}
+.fondo-imagen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+    object-fit: cover;
+    filter: brightness(0.6);
+}
+footer {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding: 20px;
+    background-color: #000;
+}
+
+/* Estilos específicos para móviles */
+@media (max-width: 991.98px) {
+    /* ... (resto del código de @media) ... */
+
+    .navbar-collapse {
+        background-color: rgba(0, 0, 0, 0.9);
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 100%;
+        z-index: 1040;
+        padding-top: 70px;
+    }
+    .mi-nav-item.dropdown .dropdown-menu {
+        position: static;
+        display: block;
+        width: 100%;
+        background-color: transparent;
+        border: none;
+        box-shadow: none;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .mi-nav-item.dropdown .dropdown-menu li .dropdown-item {
+        color: #fff;
+        text-align: center;
+        padding: 10px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
 }
